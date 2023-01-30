@@ -1,1 +1,3 @@
-# Nuxt3
+yarn
+yarn dev
+http://localhost:3000
