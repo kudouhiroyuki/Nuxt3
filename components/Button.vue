@@ -1,7 +1,7 @@
 <template>
-	<button type="button" @click="onClick">
+  <button type="button" @click="onClick">
     {{ text }}
-	</button>
+  </button>
 </template>
 
 <script setup lang="ts">
