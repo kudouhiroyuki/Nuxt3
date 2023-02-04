@@ -1,8 +1,8 @@
 <template>
   <v-btn
     @click="onClick"
+    :class="class"
     :disabled="disabled"
-    :class="classMethod"
   >
     {{ text }}
   </v-btn>
@@ -10,9 +10,9 @@
 
 <script setup lang="ts">
 interface Props extends Partial<HTMLButtonElement> {
-  disabled?: boolean;
-  classMethod?: "base";
+  class?: "base";
   text: string;
+  disabled?: boolean;
 }
 
 interface Emits {
@@ -20,9 +20,9 @@ interface Emits {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  disabled: false,
-  classMethod: "base",
+  class: "base",
   text: "",
+  disabled: false,
 });
 
 const emits = defineEmits<Emits>()

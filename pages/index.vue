@@ -4,13 +4,14 @@
   <div class="d-flex">
     <Button
       @bottonClick="onBottonClick"
-      :text="'Button'"
-      :disabled="false"
+      class="base"
+      text="Button1"
     />
     <Button
       @bottonClick="onBottonClick"
-      :text="'Button'"
-      :disabled="true"
+      class="base"
+      text="Button2"
+      disabled
     />
   </div>
 </template>
@@ -19,6 +20,8 @@
 const onBottonClick = (event: Event) => {
   alert('ボタンクリック')
 }
+
+const test = ref(false);
 </script>
 
 <style lang="scss">
