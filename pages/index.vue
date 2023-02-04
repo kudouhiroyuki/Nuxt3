@@ -1,9 +1,18 @@
 <template>
   <h1>コンポーネント一覧</h1>
-  <Button
-    @bottonClick="onBottonClick"
-    :text="'Button'"
-  />
+
+  <div class="d-flex">
+    <Button
+      @bottonClick="onBottonClick"
+      :text="'Button'"
+      :disabled="false"
+    />
+    <Button
+      @bottonClick="onBottonClick"
+      :text="'Button'"
+      :disabled="true"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">

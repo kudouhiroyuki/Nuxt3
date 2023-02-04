@@ -1,11 +1,17 @@
 <template>
-  <button type="button" @click="onClick">
+  <v-btn
+    @click="onClick"
+    :disabled="disabled"
+    :class="classMethod"
+  >
     {{ text }}
-  </button>
+  </v-btn>
 </template>
 
 <script setup lang="ts">
 interface Props extends Partial<HTMLButtonElement> {
+  disabled?: boolean;
+  classMethod?: "base";
   text: string;
 }
 
@@ -14,6 +20,8 @@ interface Emits {
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  disabled: false,
+  classMethod: "base",
   text: "",
 });
 
@@ -25,4 +33,10 @@ const onClick = (event: Event) => {
 </script>
 
 <style lang="scss">
+button {
+  &.base {
+    color: #FFF;
+    background-color:  #0069D9;
+  }
+}
 </style>
