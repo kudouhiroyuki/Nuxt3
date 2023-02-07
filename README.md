@@ -5,15 +5,6 @@ K：Key
 U：Unknown
 E：Element
 ------------------------------------------------------------------------------------->
-■Union型
-type Union: number | undefined;
-
-type Union =
-  | 400
-  | 404;
-
-type Union = (string | number)[];
-------------------------------------------------------------------------------------->
 ■Generics型
 
 class Generics<T> {
@@ -177,6 +168,8 @@ const result: ExtractA = { type: "a", data: "100" }  // エラー
 
 
 
+
+
 ------------------------------------------------------------------------------------------->
 const result: string = "文字";
 const result: number = 0;
@@ -191,11 +184,9 @@ function test(name: string): void {}
 let testName: string = "名前";
 test(testName);
 
-
 function test(name: string): string { return name }
 let testName: string = "名前";
 test(testName);
-
 
 const button1 = <HTMLButtonElement>document.createElement('button');
 const button2 = document.createElement('button') as HTMLButtonElement;
@@ -204,11 +195,9 @@ const div = <HTMLDivElement>document.createElement('div');
 const a = <HTMLAnchorElement>document.createElement('a');
 const p = <HTMLParagraphElement>document.createElement('p');
 
-
 const onParagraphClick = (event: Event) => {
   if (event.target instanceof HTMLParagraphElement) {}
 }
-
 ------------------------------------------------------------------------------------------->
 ■インターセクション型（Intersection）
 type IntersectionA = {
@@ -228,5 +217,17 @@ type IntersectionB = {
   adress: string
 }
 const result: IntersectionA & IntersectionB = { id: 1, adress: "hoge@gmail.com" };
+------------------------------------------------------------------------------------------->
+■ユニオン型（Union）
+type Union = number | undefined;
+const result: Union = 0
+
+type Union =
+  | 400
+  | 404;
+const result: Union = 404
+  
+type Union = (string | number)[];
+const result: Union = ["1", 2 ,3]
 ------------------------------------------------------------------------------------------->
 ```
