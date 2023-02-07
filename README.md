@@ -1,4 +1,5 @@
 ```
+------------------------------------------------------------------------------------->
 T：Type
 K：Key
 U：Unknown
@@ -198,6 +199,14 @@ const onFocus = (e: FocusEvent<HTMLInputElement>) => {};
 const onSubmit = (e: FormEvent<HTMLFormElement>) => {};
 ------------------------------------------------------------------------------------->
 ■動確済み
+const result: string = "文字";
+const result: number = 0;
+const result: boolean = true;
+const result: null = null;
+const result: undefined = undefined;
+const result: number[] = [1, 2, 3];
+
+
 function test(name: string): void {
 }
 let testName: string = "名前";
