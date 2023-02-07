@@ -1,14 +1,5 @@
 ```
 ------------------------------------------------------------------------------------->
-■Partial型（全てオプショナル Partial<T>）
-type PartialBase = {
-  name: string;
-  age: string;
-  address: string;
-};
-const result: Partial<PartialBase> = { name: "名前" };
-const result: Partial<PartialBase> = { name: "名前", age: '30' };
-------------------------------------------------------------------------------------->
 ■Required型（全て必須 Required<T>）
 type PartialBase = {
   name: string;
@@ -220,4 +211,14 @@ interface Generics<T extends string | number> {
 }
 const result1: Generics<string> = { value: "文字" };
 const result2: Generics<number> = { value: 0 };
+------------------------------------------------------------------------------------------->
+■パーシャル型（全てオプショナル Partial<T>）
+type PartialBase = {
+  name: string;
+  age: string;
+  address: string;
+};
+const result1: Partial<PartialBase> = { name: "名前" };
+const result2: Partial<PartialBase> = { name: "名前", age: '30' };
+
 ```
