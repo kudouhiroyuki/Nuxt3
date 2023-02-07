@@ -4,24 +4,12 @@ T：Type
 K：Key
 U：Unknown
 E：Element
-------------------------------------------------------------------------------------->
-■Generics型
-
 class Generics<T> {
   private data = [];
   push(item: T) { this.data.push(item); }
 }
 const result = new Generics<number>();
 result.push(0);
-
-
-class Generics<T extends string> {
-  name: T
-  constructor (name: T) {
-    this.name = name;
-  };
-};
-const result = new Generics('文字');
 
 
 interface GenericsProps {
@@ -48,13 +36,6 @@ const result = new Generics({
 
 const generics = <T extends number | string>(value: T): T => value;
 const result = generics<string>("文字");
-
-
-function generics<T>(arg: T): T {
-  return arg;
-}
-generics<string>("文字");
-generics<number>(0);
 
 
 interface Generics<T> {
@@ -230,4 +211,27 @@ const result: Union = 404
 type Union = (string | number)[];
 const result: Union = ["1", 2 , 3]
 ------------------------------------------------------------------------------------------->
+■ジェネリクス型（Generics）
+function generics<T>(item: T): T {
+  return item;
+}
+generics<string>("文字");
+generics<number>(0);
+
+class Generics<T> {
+  item: T
+  constructor (item: T) {
+    this.item = item;
+  };
+};
+const result1 = new Generics<string>('文字');
+const result2 = new Generics<number>(0);
+
+class Generics<T extends string> {
+  item: T
+  constructor (item: T) {
+    this.item = item;
+  };
+};
+const result = new Generics('文字');
 ```
