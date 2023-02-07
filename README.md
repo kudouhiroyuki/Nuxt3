@@ -177,7 +177,7 @@ function generics<T extends Generics>(item: Generics) {
 const result = generics({ id: 0 });
 
 const generics = <T> (value: T) => {
-  return value
+  return value;
 }
 generics<string>("文字")
 
@@ -207,7 +207,8 @@ const result = new Generics('文字');
 interface Generics<T> {
   value: T;
 }
-const result: Generics<string> = { value: "文字" };
+const result1: Generics<string> = { value: "文字" };
+const result2: Generics<number> = { value: 0 };
 
 interface Generics<T = string> {
   value: T;
