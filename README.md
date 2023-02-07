@@ -4,30 +4,10 @@ T：Type
 K：Key
 U：Unknown
 E：Element
-interface GenericsProps {
-  name: string
-  age: number
-  gender: 'male' | 'female' | 'other'
-};
-class Generics<T extends GenericsProps> {
-  name: T['name']
-  age: T['age']
-  gender: T['gender']
-  constructor (props: T) {
-    this.name = props.name
-    this.name = props.age
-    this.name = props.gender
-  }
-}
-const result = new Generics({
-  name: 'name'
-  age: 20
-  gender: 'male'
-})
 
 
-const generics = <T extends number | string>(value: T): T => value;
-const result = generics<string>("文字");
+
+
 
 
 interface Generics<T> {
@@ -216,6 +196,12 @@ function generics<T>(item: T): Array<T> {
 }
 let result1: Array<string> = generics<string>("文字");
 let result2: Array<number> = generics<number>(0);
+
+const generics = <T>(value: T): T => value;
+const result = generics<string>("文字");
+
+const generics = <T extends string>(value: T): T => value;
+const result = generics("文字");
 
 class Generics<T> {
   item: T
