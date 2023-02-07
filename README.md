@@ -228,6 +228,6 @@ type Union =
 const result: Union = 404
   
 type Union = (string | number)[];
-const result: Union = ["1", 2 ,3]
+const result: Union = ["1", 2 , 3]
 ------------------------------------------------------------------------------------------->
 ```
