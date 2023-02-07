@@ -5,19 +5,6 @@ K：Key
 U：Unknown
 E：Element
 ------------------------------------------------------------------------------------->
-■Intersection型
-type IntersectionA = {
-  id: number
-  first: string
-}
-
-type IntersectionB = {
-  id: number
-  second: string
-}
-
-type IntersectionResult = IntersectionA & IntersectionB
-------------------------------------------------------------------------------------->
 ■Union型
 type Union: number | undefined;
 
@@ -184,8 +171,13 @@ type ExtractBase = {
 type ExtractA = Extract<ExtractBase, {type: 'a'}>;
 const result: ExtractA = { type: "a", data: 100 }    // OK
 const result: ExtractA = { type: "a", data: "100" }  // エラー
-------------------------------------------------------------------------------------->
-■動確済み
+
+
+
+
+
+
+------------------------------------------------------------------------------------------->
 const result: string = "文字";
 const result: number = 0;
 const result: boolean = true;
@@ -216,5 +208,25 @@ const p = <HTMLParagraphElement>document.createElement('p');
 const onParagraphClick = (event: Event) => {
   if (event.target instanceof HTMLParagraphElement) {}
 }
-------------------------------------------------------------------------------------->
+
+------------------------------------------------------------------------------------------->
+■インターセクション型（Intersection）
+type IntersectionA = {
+  id: number
+  name: string
+}
+type IntersectionB = {
+  adress: string
+}
+const result: IntersectionA & IntersectionB = { id: 1, name: "名前", adress: "h@gmail.com" };
+
+type IntersectionA = {
+  id: number
+  name?: string
+}
+type IntersectionB = {
+  adress: string
+}
+const result: IntersectionA & IntersectionB = { id: 1, adress: "hoge@gmail.com" };
+------------------------------------------------------------------------------------------->
 ```
