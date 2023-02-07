@@ -197,4 +197,17 @@ const onBlur = (e: FocusEvent<HTMLInputElement>) => {};
 const onFocus = (e: FocusEvent<HTMLInputElement>) => {};
 const onSubmit = (e: FormEvent<HTMLFormElement>) => {};
 ------------------------------------------------------------------------------------->
+■動確済み
+function test(name: string): void {
+}
+let testName: string = "名前";
+test(testName);
+
+
+function test(name: string): string {
+  return name
+}
+let testName: string = "名前";
+test(testName);
+------------------------------------------------------------------------------------->
 ```
