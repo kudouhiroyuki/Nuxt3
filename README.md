@@ -202,20 +202,18 @@ const result: number[] = [1, 2, 3];
 const result: { id: number; name: string } = { id: 1, name: "名前" };
 const result: 'test' = 'test';
 
-function test(name: string): void {
-}
+function test(name: string): void {}
 let testName: string = "名前";
 test(testName);
 
 
-function test(name: string): string {
-  return name
-}
+function test(name: string): string { return name }
 let testName: string = "名前";
 test(testName);
 
 
-const button = <HTMLButtonElement>document.createElement('button');
+const button1 = <HTMLButtonElement>document.createElement('button');
+const button2 = document.createElement('button') as HTMLButtonElement;
 const input = <HTMLInputElement>document.createElement('input');
 const div = <HTMLDivElement>document.createElement('div');
 const a = <HTMLAnchorElement>document.createElement('a');
