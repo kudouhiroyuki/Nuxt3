@@ -185,13 +185,6 @@ type ExtractA = Extract<ExtractBase, {type: 'a'}>;
 const result: ExtractA = { type: "a", data: 100 }    // OK
 const result: ExtractA = { type: "a", data: "100" }  // エラー
 ------------------------------------------------------------------------------------->
-const onClick = (e: MouseEvent<HTMLInputElement>) => {};
-const onChange = (e: ChangeEvent<HTMLInputElement>) => {};
-const onkeypress = (e: KeyboardEvent<HTMLInputElement>) => {};
-const onBlur = (e: FocusEvent<HTMLInputElement>) => {};
-const onFocus = (e: FocusEvent<HTMLInputElement>) => {};
-const onSubmit = (e: FormEvent<HTMLFormElement>) => {};
-------------------------------------------------------------------------------------->
 ■動確済み
 const result: string = "文字";
 const result: number = 0;
@@ -218,5 +211,10 @@ const input = <HTMLInputElement>document.createElement('input');
 const div = <HTMLDivElement>document.createElement('div');
 const a = <HTMLAnchorElement>document.createElement('a');
 const p = <HTMLParagraphElement>document.createElement('p');
+
+
+const onParagraphClick = (event: Event) => {
+  if (event.target instanceof HTMLParagraphElement) {}
+}
 ------------------------------------------------------------------------------------->
 ```
