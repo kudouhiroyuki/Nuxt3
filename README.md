@@ -4,14 +4,6 @@ T：Type
 K：Key
 U：Unknown
 E：Element
-class Generics<T> {
-  private data = [];
-  push(item: T) { this.data.push(item); }
-}
-const result = new Generics<number>();
-result.push(0);
-
-
 interface GenericsProps {
   name: string
   age: number
@@ -217,6 +209,13 @@ function generics<T>(item: T): T {
 }
 generics<string>("文字");
 generics<number>(0);
+
+function generics<T>(item: T): Array<T> {
+  const result: Array<T> = [item];
+  return result;
+}
+let result1: Array<string> = generics<string>("文字");
+let result2: Array<number> = generics<number>(0);
 
 class Generics<T> {
   item: T
