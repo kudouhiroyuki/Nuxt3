@@ -185,12 +185,6 @@ type ExtractA = Extract<ExtractBase, {type: 'a'}>;
 const result: ExtractA = { type: "a", data: 100 }    // OK
 const result: ExtractA = { type: "a", data: "100" }  // エラー
 ------------------------------------------------------------------------------------->
-<HTMLButtonElement>
-<HTMLInputElement>
-<HTMLDivElement>
-<HTMLAnchorElement>
-<HTMLParagraphElement>
-
 const onClick = (e: MouseEvent<HTMLInputElement>) => {};
 const onChange = (e: ChangeEvent<HTMLInputElement>) => {};
 const onkeypress = (e: KeyboardEvent<HTMLInputElement>) => {};
@@ -205,7 +199,8 @@ const result: boolean = true;
 const result: null = null;
 const result: undefined = undefined;
 const result: number[] = [1, 2, 3];
-
+const result: { id: number; name: string } = { id: 1, name: "名前" };
+const result: 'test' = 'test';
 
 function test(name: string): void {
 }
@@ -218,5 +213,12 @@ function test(name: string): string {
 }
 let testName: string = "名前";
 test(testName);
+
+
+const button = <HTMLButtonElement>document.createElement('button');
+const input = <HTMLInputElement>document.createElement('input');
+const div = <HTMLDivElement>document.createElement('div');
+const a = <HTMLAnchorElement>document.createElement('a');
+const p = <HTMLParagraphElement>document.createElement('p');
 ------------------------------------------------------------------------------------->
 ```
