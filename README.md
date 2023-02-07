@@ -1,25 +1,4 @@
 ```
-------------------------------------------------------------------------------------->
-T：Type
-K：Key
-U：Unknown
-E：Element
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 type GenericsBase<T> = T extends string ? number : boolean;
 type GenericsA = GenericsBase<string>;
 type GenericsB = GenericsBase<object>;
@@ -191,6 +170,14 @@ function generics<T>(item: T): Array<T> {
 }
 let result1: Array<string> = generics<string>("文字");
 let result2: Array<number> = generics<number>(0);
+
+interface Generics {
+  id: number;
+};
+function generics<T extends Generics>(item: Generics) {
+  return { value: item.id }
+};
+const result = generics({ id: 0 });
 
 const generics = <T> (value: T) => {
   return value
