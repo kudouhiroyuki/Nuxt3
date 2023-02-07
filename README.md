@@ -10,23 +10,14 @@ E：Element
 
 
 
-interface Generics<T> {
-  value: T;
-}
-const result: Generics<string> = { value: "文字" };
 
 
-interface Generics<T = string> {
-  value: T;
-}
-const result: Generics<string> = { value: "文字" };
 
 
-interface Generics<T extends string | number> {
-  value: T;
-}
-const result: Generics<string> = { value: "文字" };
-const result: Generics<number> = { value: 0 };
+
+
+
+
 
 
 type GenericsBase<T> = T extends string ? number : boolean;
@@ -197,6 +188,11 @@ function generics<T>(item: T): Array<T> {
 let result1: Array<string> = generics<string>("文字");
 let result2: Array<number> = generics<number>(0);
 
+const generics = <T> (value: T) => {
+  return value
+}
+generics<string>("文字")
+
 const generics = <T>(value: T): T => value;
 const result = generics<string>("文字");
 
@@ -219,4 +215,20 @@ class Generics<T extends string> {
   };
 };
 const result = new Generics('文字');
+
+interface Generics<T> {
+  value: T;
+}
+const result: Generics<string> = { value: "文字" };
+
+interface Generics<T = string> {
+  value: T;
+}
+const result: Generics<string> = { value: "文字" };
+
+interface Generics<T extends string | number> {
+  value: T;
+}
+const result1: Generics<string> = { value: "文字" };
+const result2: Generics<number> = { value: 0 };
 ```
