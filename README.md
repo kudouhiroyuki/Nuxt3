@@ -1,7 +1,4 @@
 ```
-type GenericsBase<T> = T extends string ? number : boolean;
-type GenericsA = GenericsBase<string>;
-type GenericsB = GenericsBase<object>;
 ------------------------------------------------------------------------------------->
 ■Partial型（全てオプショナル Partial<T>）
 type PartialBase = {
